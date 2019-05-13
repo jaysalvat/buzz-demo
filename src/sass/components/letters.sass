@@ -1,0 +1,71 @@
+/*---------------------------------------- */
+/* Letters
+/*---------------------------------------- */
+
+$rotation: 35
+$translation: 50
+
+.letters
+    position: absolute
+    left: 50%
+    transform: translate(-50%) !important
+    bottom: calc(50% - 280px)
+    width: 100%
+    text-align: center
+
+    @media (max-width: $mobile)
+        bottom: calc(50% - 230px)
+
+.letter
+    transform: scale(5)
+    opacity: 0
+    display: inline-block
+    cursor: move
+    touch-action: none
+    position: relative
+
+    &:after
+        content: attr(data-letter)
+        display: block;
+        text-transform: uppercase
+        background: linear-gradient(#fff, #ccc)
+        border: 1px solid #fff
+        margin: 4px
+        width: 50px
+        height: 50px
+        font-size: 32px
+        border-radius: 4px
+        text-align: center
+        box-shadow: 0 14px 28px rgba(black ,0.25), 0 10px 10px rgba(black ,0.22)
+        text-shadow: 0 2px 0 #fff
+
+        @media (max-width: $mobile)
+            width: 35px
+            height: 35px
+            font-size: 21px
+            margin: 1px
+
+.transitionable
+    .letter
+        transition: transform .2s, opacity .2s
+
+        @for $i from 1 through 10
+            &:nth-child(#{$i})
+                transition-delay: 1 + ($i * .03) + s
+
+.thrown
+    .letter
+        opacity: 1
+
+        @for $i from 1 through 10
+            &:nth-child(#{$i})
+                transform: scale(1) rotate((random($rotation) - $rotation / 2) + deg) translateY((random($translation) - $translation / 2) + px)
+
+                &:after
+                    animation-delay: .5 + ($i * .05) + s
+
+        &:after
+            animation-duration: .75s
+            animation-name: bounce
+
+

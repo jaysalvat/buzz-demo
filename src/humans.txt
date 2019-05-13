@@ -1,0 +1,20 @@
+/* TEAM */
+
+    Name: Jay Salvat
+    Site: http://jaysalvat.com
+    Email: jay.salvat [at] gmail.com
+    Twitter: @jaysalvat
+    Location: Sophia-Antipolis, France
+
+/* THANKS */
+
+Thanks Joker for his wonderful Circus icons.
+
+    Author: Joker
+    Site: http://joker2011.deviantart.com/art/Joker-Circus-208667908
+
+/* SITE */
+
+    Doctype: HTML5
+    Standards: HTML5, JS, CSS3
+    Components: Buzz Audio Library

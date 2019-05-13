@@ -1,0 +1,48 @@
+/*---------------------------------------- */
+/* Ad
+/*---------------------------------------- */
+
+.ad
+    position: absolute
+    right: 8px
+    bottom: 8px
+    padding: 8px
+    display: block
+    width: 148px
+    background: #FFF
+    box-shadow: 0px 2px 10px rgba(#000, .5)
+    border-radius: 4px
+    font: 11px/1.5 Arial, sans-serif
+    transition: transform .25s ease-out
+    transition-delay: 5s
+    transform: translateX(120%)
+    min-height: 30px
+
+    .started &
+        transform: translateY(0)
+
+    @media (max-width: 768px - 1)
+        display: none
+
+.ad-close
+    position: absolute
+    bottom: 2px
+    right: 8px
+    font-size: 16px
+    color: black
+
+.adpacks-img,
+.adpacks-text
+    display: block
+    margin-bottom: 5px
+
+.adpacks-poweredby
+    color: #111
+    font-weight: normal
+    font-size: 10px
+    display: block
+
+.adpacks-text
+    color: #777
+    font-weight: normal
+    text-decoration: none

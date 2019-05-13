@@ -1,0 +1,36 @@
+/*---------------------------------------- */
+/* Starbursts
+/*---------------------------------------- */
+
+.starburst
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    opacity: 0
+    transition: opacity 1s
+
+    .started &
+        opacity: 1
+
+    &:before,
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        background: url(../img/starburst.svg)
+        background-size: 100% 100%
+        animation: spin infinite ease-in-out
+
+    &:before
+        animation-duration: 110000ms
+        opacity: .10
+
+    &:after
+        animation-duration: 80000ms
+        opacity: .20

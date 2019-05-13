@@ -1,0 +1,33 @@
+/*---------------------------------------- */
+/* Buttons
+/*---------------------------------------- */
+
+.prev,
+.next,
+.levl
+    font-size: 4em
+    color: black
+    position: absolute
+    bottom: calc(50% - 30px)
+    opacity: .5
+    transition: opacity 1s
+
+    &:hover
+        opacity: .8
+
+.prev
+    left: 10px
+
+.next
+    right: 10px
+
+.levl
+    font-size: 2em
+    bottom: 0
+    width: 150px
+    margin-left: -75px
+    left: 50%
+    text-align: center
+
+    @media (max-width: $mobile)
+        bottom: 50px
