@@ -6,8 +6,9 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "mkdir -p dist && cp -r src/img dist/ && cp -r src/sounds dist/ && parcel src/index.html --port 3000",
-    "build": "parcel build src/index.html --no-content-hash && cp -r src/img dist/ && cp -r src/sounds dist/ && cp src/humans.txt dist/",
-    "clean": "rm -rf dist .parcel-cache"
+    "build": "parcel build src/index.html --no-content-hash --public-url ./ && cp -r src/img dist/ && cp -r src/sounds dist/ && cp src/humans.txt dist/",
+    "clean": "rm -rf dist .parcel-cache",
+    "deploy": "npm run build && ./deploy"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.4",
