@@ -1,0 +1,66 @@
+/*---------------------------------------- */
+/* Play Screen
+/*---------------------------------------- */
+
+.play-screen
+    position: fixed
+    inset: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 200
+    background: rgba(black, 0.15)
+    transition: opacity .4s
+    cursor: pointer
+
+    &.hiding
+        opacity: 0
+        pointer-events: none
+
+    .starburst
+        opacity: 1
+
+html:not(.started)
+    .prev, .next, .levl
+        visibility: hidden
+
+.play-letters
+    display: flex
+
+.play-letter
+    animation-fill-mode: both
+    animation-duration: .75s
+    animation-name: bounce
+
+    @for $i from 1 through 4
+        &:nth-child(#{$i})
+            animation-delay: $i * 0.1s
+
+    &:after
+        content: attr(data-letter)
+        display: block
+        text-transform: uppercase
+        background: linear-gradient(#fff, #ccc)
+        border: 1px solid #fff
+
+        width: 80px
+        height: 80px
+        font-size: 52px
+        line-height: 80px
+        border-radius: 6px
+        text-align: center
+        box-shadow: 0 14px 28px rgba(black, 0.25), 0 10px 10px rgba(black, 0.22)
+        text-shadow: 0 2px 0 #fff
+        font-family: 'Permanent Marker', cursive
+
+    &:nth-child(1):after
+        transform: rotate(-8deg)
+
+    &:nth-child(2):after
+        transform: rotate(5deg)
+
+    &:nth-child(3):after
+        transform: rotate(-3deg)
+
+    &:nth-child(4):after
+        transform: rotate(7deg)

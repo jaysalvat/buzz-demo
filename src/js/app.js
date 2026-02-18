@@ -16,17 +16,18 @@
         { img: 'img/lion.png',     color: '#C19850',  word: 'lion',       sound: 'sounds/lion' }
     ];
 
-    var $html     = $('html'),
-        $link     = $('.header a'),
-        $warning  = $('.warning'),
-        $ad       = $('.ad'),
-        $adClose  = $('.ad a'),
-        $figure   = $('.figure'),
-        $letters  = $('.letters'),
-        $models   = $('.models'),
-        $prev     = $('.prev'),
-        $next     = $('.next'),
-        $levl     = $('.levl');
+    var $html       = $('html'),
+        $link       = $('.header a'),
+        $warning    = $('.warning'),
+        $ad         = $('.ad'),
+        $adClose    = $('.ad a'),
+        $figure     = $('.figure'),
+        $letters    = $('.letters'),
+        $models     = $('.models'),
+        $prev       = $('.prev'),
+        $next       = $('.next'),
+        $levl       = $('.levl'),
+        $playScreen = $('.play-screen');
 
     var index     = 0,
         score     = 0,
@@ -331,8 +332,15 @@
         return document.querySelector(selector);
     }
 
-    // Start Game
+    // Play screen
 
-    setGame(index);
-    setAnimation($html, 'started', false);
+    $playScreen.addEventListener('click', function (e) {
+        e.preventDefault();
+        $playScreen.classList.add('hiding');
+        setTimeout(function () {
+            $playScreen.style.display = 'none';
+        }, 400);
+        setGame(index);
+        setAnimation($html, 'started', false);
+    });
 })();
