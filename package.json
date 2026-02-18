@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "Buzz, a Javascript HTML5 Audio library - Demo",
   "author": "Jay Salvat",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "mkdir -p dist && cp -r src/img dist/ && cp -r src/sounds dist/ && parcel src/index.html --port 3000",
+    "build": "parcel build src/index.html --no-content-hash && cp -r src/img dist/ && cp -r src/sounds dist/ && cp src/humans.txt dist/",
+    "clean": "rm -rf dist .parcel-cache"
+  },
   "devDependencies": {
-    "del": "^3.0.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1"
+    "@parcel/transformer-sass": "^2.16.4",
+    "parcel": "^2.16.4",
+    "sass": "^1.97.3"
   }
 }

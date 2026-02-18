@@ -1,3 +1,5 @@
+@use '../variables' as *
+
 /*---------------------------------------- */
 /* Models
 /*---------------------------------------- */
@@ -58,10 +60,10 @@
 
         @for $i from 1 through 10
             &:nth-child(#{$i})
-                transition-delay: 1s + ($i * .02) + s
+                transition-delay: 1s + $i * 0.02s
 
 .won
     .model
         @for $i from 1 through 10
             &:nth-child(#{$i})
-                animation-delay: ($i * .15) + s
+                animation-delay: $i * 0.15s

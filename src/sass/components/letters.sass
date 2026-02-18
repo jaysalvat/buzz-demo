@@ -1,3 +1,6 @@
+@use 'sass:math'
+@use '../variables' as *
+
 /*---------------------------------------- */
 /* Letters
 /*---------------------------------------- */
@@ -51,7 +54,7 @@ $translation: 50
 
         @for $i from 1 through 10
             &:nth-child(#{$i})
-                transition-delay: 1 + ($i * .03) + s
+                transition-delay: (1 + $i * 0.03) * 1s
 
 .thrown
     .letter
@@ -59,13 +62,11 @@ $translation: 50
 
         @for $i from 1 through 10
             &:nth-child(#{$i})
-                transform: scale(1) rotate((random($rotation) - $rotation / 2) + deg) translateY((random($translation) - $translation / 2) + px)
+                transform: scale(1) rotate((math.random($rotation) - math.div($rotation, 2)) * 1deg) translateY((math.random($translation) - math.div($translation, 2)) * 1px)
 
                 &:after
-                    animation-delay: .5 + ($i * .05) + s
+                    animation-delay: (0.5 + $i * 0.05) * 1s
 
         &:after
             animation-duration: .75s
             animation-name: bounce
-
-
